@@ -3,12 +3,10 @@ FROM brimstone/kali:latest
 
 MAINTAINER Robert "diguoliangmin@foxmail.com"
 
-#RUN curl -o apt.deb  http://ftp.us.debian.org/debian/pool/main/a/apt/apt_0.9.7.9+deb7u6_amd64.deb
-
-#RUN dpkg -i apt.deb
-
 RUN apt-get update && apt-get install -y openvas && apt-get autoclean
 
 RUN openvas-scapdata-sync
+
+EXPOSE 127.0.0.1:8080:80  #for gsd
 
 CMD ["/bin/bash","openvas-check-setup"]
