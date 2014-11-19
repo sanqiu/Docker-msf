@@ -8,3 +8,7 @@ MAINTAINER Robert "diguo@foxmail.com"
 #RUN dpkg -i apt.deb
 
 RUN apt-get update && apt-get install -y openvas && apt-get autoclean
+
+RUN openvas-scapdata-sync
+
+ENTRYPOINT openvas-check-setup
