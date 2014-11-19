@@ -1,5 +1,5 @@
 #Docker image kali-msf with msf,postgres,openvas
-FROM brimstone/kali:lastest
+FROM brimstone/kali:latest
 
 MAINTAINER Robert "diguo@foxmail.com"
 
