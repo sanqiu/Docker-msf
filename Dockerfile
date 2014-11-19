@@ -11,4 +11,4 @@ RUN apt-get update && apt-get install -y openvas && apt-get autoclean
 
 RUN openvas-scapdata-sync
 
-ENTRYPOINT openvas-check-setup
+CMD ["openvas-check-setup"]
