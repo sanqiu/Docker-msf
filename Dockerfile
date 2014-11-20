@@ -8,6 +8,7 @@ RUN openvas-scapdata-sync
 RUN apt-get install -y  tor net-tools && apt-get autoclean
 
 #Access container GSA from host browser
-EXPOSE 127.0.0.1::9392
+#EXPOSE 127.0.0.1::9392
+#CP .torrc ./.torrc
 
 CMD ["/bin/bash","openvas-check-setup"]
