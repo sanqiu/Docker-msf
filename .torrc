@@ -1,0 +1,5 @@
+Socks5Proxy 127.0.0.1:1080
+DataDirectory /home/robert/.tor
+log notice stdout
+StrictNodes 1
+ExcludeNodes {cn}
