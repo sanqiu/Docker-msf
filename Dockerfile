@@ -1,14 +1,14 @@
 #Docker image kali-msf with msf,postgres,openvas
 FROM brimstone/kali:latest
 
-MAINTAINER Robert "diguoliangmin@foxmail.com"
+MAINTAINER Robert 
 
-RUN apt-get update && apt-get install -y openvas && apt-get autoclean
+RUN apt-get update && apt-get install -y openvas tor net-tools && apt-get autoclean
 RUN openvas-scapdata-sync
-RUN apt-get install -y  tor net-tools && apt-get autoclean
+RUN openvas-nvt-sync
 
 #Access container's GSA from other containers
 #EXPOSE 127.0.0.1::9392
 #CP .torrc ~/.torrc
-
+#ENTRYPOINT openvas-setup
 CMD ["/bin/bash","openvas-check-setup"]
