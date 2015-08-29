@@ -3,7 +3,9 @@ FROM brimstone/kali:latest
 
 MAINTAINER Robert 
 
-RUN apt-get update && apt-get install -y openvas tor net-tools && apt-get autoclean
+RUN apt-get update && apt-get install -y openvas openvas-cli greenbone-security-assistant openvas-manager openvas-scanner \
+    tor net-tools 
+    && apt-get autoclean
 RUN openvas-scapdata-sync
 RUN openvas-nvt-sync
 
