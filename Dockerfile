@@ -3,8 +3,8 @@ FROM brimstone/kali:latest
 
 MAINTAINER Robert 
 
-RUN apt-get update && apt-get install -y openvas libsnmp15 libopenvas8 openvas-cli greenbone-security-assistant openvas-manager openvas-scanner \
-    tor net-tools 
+RUN apt-get update && apt-get install -y 'libperl5.14' libsnmp-base libsnmp15 libopenvas8 openvas-cli greenbone-security-assistant openvas-manager openvas-scanner \
+    openvas tor net-tools 
     && apt-get autoclean
 RUN openvas-scapdata-sync
 RUN openvas-nvt-sync
